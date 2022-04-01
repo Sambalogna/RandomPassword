@@ -21,6 +21,7 @@ function  generatePassword() {
 
     if (passwordLength <= 128 && passwordLength >= 8) {
         var typeConfirm = confirm("please pick one of the following types")
+        console.log(passwordLength);
         
         if( typeConfirm === false) {
             var areYouSure = confirm('Do you want a password?');
