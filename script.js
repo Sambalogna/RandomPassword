@@ -1,15 +1,11 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-
 // Write password to the #password input
 // function writePassword() {
 //   var password = generatePassword();
 //   var passwordText = document.querySelector("#password");
-
 //   passwordText.value = password;
-
 // }
-
 // Add event listener to generate button
 generateBtn.addEventListener("click", generatePassword);
 
@@ -23,14 +19,15 @@ function  generatePassword() {
         var typeConfirm = confirm("please pick one of the following types")
         if( typeConfirm === false) {
             var areYouSure = confirm('Do you want a password?');
-            if (areYouSure === true) {
-                generatePassword();
+            
             }
+        if (areYouSure === true) {
+            generatePassword();
         }
 
     }
     else{
-        var confirmError =confirm("you must pick a number between 8-128");
+        var confirmError = confirm("you must pick a number between 8-128");
         if (confirmError === true) {
             generatePassword();
         }
@@ -82,9 +79,10 @@ function  generatePassword() {
             
         }
     }   
-    
+    //creates newPassword, appending newPassword string by iterating the amount of passwordLength
+    //passwordArray[random] indexes a character from the passwordArray appending that character to newPassword
     newPassword = ''
-    for (i=0; i < passwordLength- 1; i++){ 
+    for (i=0; i < passwordLength; i++){ 
         newPassword += passwordArray[Math.floor(Math.random()*passwordArray.length)];  
     }
     
