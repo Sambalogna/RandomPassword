@@ -6,3 +6,10 @@ This project involved using an addEventListener. Upon clicking the generate pass
 
 [RandomPasswordGeneratorWebPage](https://sambalogna.github.io/RandomPassword/)
 [Screenshot](./assets/Capture.PNG)
+
+## Key Code Snippets
+
+```Javascript
+if (passwordLength <= 128 && passwordLength >= 8) {
+        var typeConfirm = confirm("please pick one of the following types")
+}
