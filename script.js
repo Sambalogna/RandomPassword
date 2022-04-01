@@ -29,20 +29,25 @@ function  generatePassword() {
         (num === true) || 
         (specialChar === true) ) {
             if (lowCase===true){
-                var lC = [];
+                var lC = ['a b c d e f g h i j k l o m n o p q r s w x y z'];
+                var lCArray = lC.split(' ')
                 passwordArray.concat(lC);
             }
             if (upCase === true) {
-                var uC = [];
-                passwordArray.concat(uC);
+                var uC = 'A B C D E F G H I J K L M N O P Q R S T U V W X Y Z';
+                var uCArray = uC.split(" ");
+                console.log(uCArray);
+                var passwordArray = passwordArray.concat(uCArray);
+                console.log(passwordArray)
             }
             if (num === true) {
-                var num = [];
+                var num = '0 1 2 3 4 5 6 7 8 9';
                 passwordArray.concat(num);
             }
-            //I should have just used methods 
             if (specialChar === true) {
-                var specialChar = ["!","\"","#","$","%","&,","\'","()","*","+",",","-",".","/",":",";","<","=",">","?","@","[","\\","]","^","_","`","{","|","}","~"];
+                var specialChar =  "! \" # $ % & ' ( ) * + , - . / : ; < = > ? @ [ \\ ] ^ _ ` { | } ~";
+                var specialCharArray = specialChar.split(" ");
+                var passwordArray = passwordArray.concat(specialCharArray);
                 passwordArray.concat(specialChar);
             }
         }
@@ -50,4 +55,5 @@ function  generatePassword() {
         alert("you must pick one type")
         generatePassword();
     }
-}
+    console.log(passwordArray);
+ }
