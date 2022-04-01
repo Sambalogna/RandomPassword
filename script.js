@@ -2,16 +2,16 @@
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+// function writePassword() {
+//   var password = generatePassword();
+//   var passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
+//   passwordText.value = password;
 
-}
+// }
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+generateBtn.addEventListener("click", generatePassword);
 
 
 function  generatePassword() {
@@ -21,8 +21,6 @@ function  generatePassword() {
 
     if (passwordLength <= 128 && passwordLength >= 8) {
         var typeConfirm = confirm("please pick one of the following types")
-        console.log(passwordLength);
-        
         if( typeConfirm === false) {
             var areYouSure = confirm('Do you want a password?');
             if (areYouSure === true) {
@@ -83,6 +81,16 @@ function  generatePassword() {
             }
             
         }
-    }    
-    console.log(passwordArray);
- }
+    }   
+    
+    newPassword = ''
+    for (i=0; i < passwordLength- 1; i++){ 
+        newPassword += passwordArray[Math.floor(Math.random()*passwordArray.length)];  
+    }
+    
+        var passwordText = document.querySelector("#password");
+        return passwordText.value = newPassword;
+
+}
+
+
